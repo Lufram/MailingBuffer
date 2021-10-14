@@ -1,38 +1,36 @@
 package requirem.second;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-
 public class Producer extends Thread {
 
-    private String name;
+    private String threadName;
     private Buffer buffer;
     // Constructor
-    public Producer (String sender, Buffer buffer) { 
+    public Producer (String threadName, Buffer buffer) {
         super();
-        this.name = name;
+        this.threadName = threadName;
         this.buffer = buffer;
-        Thread.setName(name);
     }
-    // Getters
-    public  String getSender() {
-        return name;
+
+    public String getThreadName() {
+        return threadName;
     }
-    public  String getBuffer() {
+
+    public void setThreadName(String threadName) {
+        this.threadName = threadName;
+    }
+
+    public Buffer getBuffer() {
         return buffer;
     }
 
-    // Setters
-    public void setSender(String sender) {
-        this.name = name;
-    }
-    public void setBuffer(String sender) {
+    public void setBuffer(Buffer buffer) {
         this.buffer = buffer;
     }
 
     @Override
     public void run() {
-       
-       
+        while (buffer.getRecipients().size() != 0) {
+            buffer.addEmail();
+        }
     }
 }
