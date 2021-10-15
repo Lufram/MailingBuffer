@@ -1,17 +1,17 @@
 package requirem.second;
 
 public class Producer extends Thread {
-    
+
     private String producerName;
     private Buffer buffer;
-    
+
     // Constructor
     public Producer (String producerName, Buffer buffer) {
         super();
         this.producerName = producerName;
         this.buffer = buffer;
     }
-    
+
     // Getters y setters
     public String getProducerName() {
         return producerName;
@@ -29,7 +29,7 @@ public class Producer extends Thread {
     @Override
     public void run() {
         // Cada hilo producira 10 Emails
-        for (i = 1 ; i <= 10 ; i++) {
+        for (int i = 1 ; i <= 10 ; i++) {
             // Crea un nuevo Email mediaten el metodo adEmail de Buffer
             buffer.addEmail();
         }
