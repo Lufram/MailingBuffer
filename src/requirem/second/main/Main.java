@@ -23,7 +23,7 @@ public class Main {
 
 
         //Poblamos de correos destinatariosla lista
-         buffer.addRecipients("/links.txt");
+         buffer.addRecipients("../links/emails-clients.txt");
         
         /* 
         buffer.addRecipients("rechulona88@gmail.com");
