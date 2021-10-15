@@ -11,20 +11,27 @@ public class Consumer extends Thread {
         this.recipient  = recipient;
         this.buffer = buffer;
     }
-
-    public String getDestinatario() {
+    // setters y getters
+    public String getRecipent() {
         return recipient;
     }
-
-    public void setDestinatario(String destinatario) {
-        this.recipient  = destinatario;
+    public String getBuffer() {
+        return buffer;
     }
-
+    public void setRecipent(String recipent) {
+        this.recipient  = recipient;
+    }
+    public String setBuffer(Buffer buffer) {
+        return buffer;
+    }
+    
+    @Override
     public void run() {
-        //los consumidores se quedan siempre leyendo emails. El metodo run() no termina nunca por eso se utiliza while(true)
-
-        while (true){ //buffer.getRecipients().size() == 0 && buffer.getBuffer().size() == 0
+        // El metodo se ejecuta permantentemente
+        while (true){
+            // Saca un objeto de buffer mediante el metodo getEmail lo almacena
             Email email = buffer.getEmail();
+            // Imprime por consola el Email
             System.out.println(email.toString());
         }
 
