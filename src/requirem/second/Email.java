@@ -53,10 +53,12 @@ public class Email{
 
     @Override
     public String toString() {
+        var fechaHora = DateTimeFormatter.ofPattern("dd/MM/yy -- HH:mm:ss");
         return "Email " + id + "----->" +
                 "Enviado por: " + sender + "------>" +
-                "para: " + recipient + "------>" +
-                "dice: " + bodyEmail + "."
+                "Fecha: " + sender + "------>" +
+                "Para: " + recipient + "------>" +
+                "Dice: " + bodyEmail + "."
                 ;
     }
 }
