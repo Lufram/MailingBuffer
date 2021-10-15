@@ -1,15 +1,16 @@
-# Hilos
+# REQUERIMIENTO 1 -  PRIME CHEKER
 
-Crear un proceso en un ordenador implica los siguientes cambios:
+Simulacion de un programa que solicita 4 numeros por pantalla y comprueba de forma simultanea si son primos y nos devuelve la información por consola.
 
-- La reserva de una determinada memoria de trabajo.b>hilo</b>
-- Carga de trabajo para el procesador, que tendrá que ir ejecutando las instrucciones incluidas en el proceso.
-- Cambios de estado del proceso, que se reflejan en los valores de los registros de la CPU.
 
-## Sistemas multitarea 
+# REQUERIMIENTO 2 -  MAILING BUFFER
 
-Estos sistemas tienen una serie de características:
+Simulacion de un programa de automatización de mailing publicitario. Queremos implementar un sistema que automatice la salida de correos electronicos de una campaña a una pila de correos utilizando como remitente los correos de los miembros del Dpto. Comercial.
 
-- Varios hilos en ejecución dentro del mismo proceso.
+## HILOS 
 
-- Todos los hilos comparten los recurso que el sistema operativo haya asignado al proceso. La incorporación de un hilo más no supone la asignación de más recursos del sistema. 
+El sistema de mailing funciona mediante el uso de hilos para creacion y envio de emails, simultaneamente 3 procesos generan los emails añadiendo el remitente (comercial) y el destinatario (cliente) y los añade a un buffer que almacena hasta 4 emails, otros dos procesos se encargan de sacar los email del buffer y enviarlos.
+
+# REQUERIMIENTO 3 -  MAILING BUFFER++
+
+Añadimos un sistema de comprobación que nos permita añadir correos a una lista negra que no queremos que se les envie el correo publicitario.
