@@ -23,12 +23,15 @@ public class Main {
 
 
         //Poblamos de correos destinatariosla lista
+         buffer.addRecipients("/links.txt");
+        
+        /* 
         buffer.addRecipients("rechulona88@gmail.com");
         buffer.addRecipients("picachu88@gmail.com");
         buffer.addRecipients("qrikverga@todoloqpuedas.com");
         buffer.addRecipients("mamasita-rica@gmail.com");
         buffer.addRecipients("nomecuentestuvida@gmail.com");
-
+        */
 
         //creamos 3 hilos productores
         Producer p1 = new Producer("producer1", buffer);
