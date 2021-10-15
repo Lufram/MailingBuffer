@@ -6,7 +6,7 @@ import requirem.second.Producer;
 
 import javax.swing.*;
 
-public class Main {
+public class MainSecond {
 
     public static void main(String[] args) {
 
