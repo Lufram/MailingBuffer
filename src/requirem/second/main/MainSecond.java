@@ -4,7 +4,6 @@ import requirem.second.Buffer;
 import requirem.second.Consumer;
 import requirem.second.Producer;
 
-import javax.swing.*;
 
 public class MainSecond {
 
@@ -23,9 +22,9 @@ public class MainSecond {
 
 
         //Poblamos de correos destinatariosla lista
-         buffer.addRecipients("../links/emails-clients.txt");
-        
-        /* 
+        buffer.addRecipients("src/requirem/second/links/emails-clients.txt");
+
+        /*
         buffer.addRecipients("rechulona88@gmail.com");
         buffer.addRecipients("picachu88@gmail.com");
         buffer.addRecipients("qrikverga@todoloqpuedas.com");
@@ -35,11 +34,11 @@ public class MainSecond {
 
         //creamos 3 hilos productores
         Producer p1 = new Producer("producer1", buffer);
-        p1.setName(p1.getThreadName());
+        p1.setName(p1.getProducerName());
         Producer p2 = new Producer("producer2", buffer);
-        p2.setName(p2.getThreadName());
+        p2.setName(p2.getProducerName());
         Producer p3 = new Producer("producer3", buffer);
-        p3.setName(p3.getThreadName());
+        p3.setName(p3.getProducerName());
 
         //creamos 2 hilos consumidores
         Consumer c1 = new Consumer("consumer1", buffer);
