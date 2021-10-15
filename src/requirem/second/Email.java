@@ -53,9 +53,9 @@ public class Email{
 
     @Override
     public String toString() {
-        return "Email{" +
-                "Enviado por: " + sender + "------" +
-                "para: " + recipient + "------" +
+        return "Email " + id + "----->" +
+                "Enviado por: " + sender + "------>" +
+                "para: " + recipient + "------>" +
                 "dice: " + bodyEmail + "."
                 ;
     }
