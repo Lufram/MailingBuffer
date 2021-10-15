@@ -18,7 +18,7 @@ public class Email{
         generateBody();
     }
 
-    // Getters
+    // Getters y setters
     public  String getRecipient() {
         return recipient;
     }
@@ -28,8 +28,6 @@ public class Email{
     public  String getBodyEmail() {
         return bodyEmail;
     }
-
-    // Setters
     public void setRecipient(String recipient) {
         this.recipient = recipient;
     }
@@ -52,7 +50,9 @@ public class Email{
     }
 
     @Override
+    // Sobreescribimos el metodo toString como queremos que se impriman los mensajes
     public String toString() {
+        // Capturamos la fecha y la hora en el momento en el que lo imprimimos
         var fechaHora = DateTimeFormatter.ofPattern("dd/MM/yy -- HH:mm:ss");
         return "Email " + id + 
                 \n"-------------------------------------------------------" +
