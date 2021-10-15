@@ -34,6 +34,5 @@ public class Consumer extends Thread {
             // Imprime por consola el Email
             System.out.println(email.toString());
         }
-
     }
 }
