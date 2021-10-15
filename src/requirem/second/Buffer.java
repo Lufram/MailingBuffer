@@ -38,10 +38,33 @@ public class Buffer {
     public void setRecipients(Queue<String> recipients) {
         this.recipients = recipients;
     }
+    
+    public void addRecipients(String url){
+        
+        try {
+	        Scanner sc = new Scanner(new FileInputStream(url));
+	        
+	        while (sc.hasNextLine()){
+	        String recipient = sc.nextLine();
+	        recipients.offer(recipient);
+   		 }
+   		 sc.close();
+        }
 
+        catch (FileNotFoundException e) {
+        System.out.println("ERROR OPENING FILE") ;
+       	e.printStackTrace();
+        }
+        catch (Exception e) {
+		e.printStackTrace();
+		System.out.println("\nProgram terminated Safely...");
+		}
+    }
+    /*
     public void addRecipients(String recipient){
         recipients.offer(recipient);
     }
+    */
 
     // Metodo para añadir emails al buffer
     public synchronized void addEmail() {
