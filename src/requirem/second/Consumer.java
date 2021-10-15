@@ -15,16 +15,16 @@ public class Consumer extends Thread {
     public String getRecipent() {
         return recipient;
     }
-    public String getBuffer() {
+    public Buffer getBuffer() {
         return buffer;
     }
     public void setRecipent(String recipent) {
         this.recipient  = recipient;
     }
-    public String setBuffer(Buffer buffer) {
-        return buffer;
+    public void setBuffer(Buffer buffer) {
+        this.buffer = buffer;
     }
-    
+
     @Override
     public void run() {
         // El metodo se ejecuta permantentemente
