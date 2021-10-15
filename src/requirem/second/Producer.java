@@ -29,7 +29,7 @@ public class Producer extends Thread {
 
     @Override
     public void run() {
-        while (buffer.getRecipients().size() != 0) {
+        for (i = 1 ; i <= 10 ; i++) {
             buffer.addEmail();
         }
     }
