@@ -2,7 +2,7 @@
 
 
 ## 1-REQUERIMIENTO  -  PRIME CHEKER
-<div style="text-align:  text-align: justify,
+<div style="text-align: justify,
   text-justify: inter-word"> 
 Simulacion de un programa que solicita 4 numeros por pantalla y comprueba de forma simultanea si son primos y nos devuelve la información por consola.
 
