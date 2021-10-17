@@ -55,7 +55,7 @@ public class Email{
         cont++;
     }
 
-    // Genera el cuerpo del email
+    // Genera el cuerpo y el asunto del email
     private void generateBody(){
         bodyEmail = randomChain(17);
     }
@@ -63,6 +63,7 @@ public class Email{
         subject = randomChain(8);
     }
 
+    //genera cadena de caracteres aleatorio que utilizan los metodos del cuerpo y el asunto
     public static String randomChain(int longitud) {
 
         String resultado = "";
@@ -80,10 +81,11 @@ public class Email{
     }
 
     @Override
-    // Sobreescribimos el metodo toString como queremos que se impriman los mensajes
+    // Sobreescribimos el metodo toString como queremos que se impriman en los mensajes
     public String toString() {
-        // Capturamos la fecha y la hora en el momento en el que lo imprimimos
+        // Capturamos la fecha y la hora en el momento en el que lo imprimimos y le damos un formato
         var fechaHora = DateTimeFormatter.ofPattern("dd/MM/yy -- HH:mm:ss");
+        
         return "Email id:" + id +
                 "\n-------------------------------------------------------" +
                 "\nEnviado por: " + sender + "------>" +
