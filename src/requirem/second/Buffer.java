@@ -28,6 +28,8 @@ public class Buffer {
     public void setBuffer(Queue<Email> buffer) {
         this.buffer = buffer;
     }
+    
+    //getters & setters
     public String[] getSenders() {
         return senders;
     }
@@ -47,7 +49,7 @@ public class Buffer {
         this.recipients = recipients;
     }
 
-    // Metodo que añade los destinatarios desde un archivo externo
+    // Metodo que introduce los destinatarios desde un archivo externo
     public void addRecipients(String src){
         try {
             // Declara el escaner que utilizaremos para leer el archivo
@@ -56,7 +58,7 @@ public class Buffer {
             while (sc.hasNextLine()){
                 // Almacena el texto del escaner a cada vuelta
                 String recipient = sc.nextLine();
-                // Añade el texto a la lista
+                // Introduce el texto a la lista
                 recipients.offer(recipient);
             }
             // Apagamos el scanner
@@ -72,16 +74,11 @@ public class Buffer {
             System.out.println("\nProgram terminated Safely...");
         }
     }
-    /*
-    public void addRecipients(String recipient){
-        recipients.offer(recipient);
-    }
-    */
-
-    // Metodo para añadir emails al buffer
+    
+    // Metodo para introducir emails al buffer
     public synchronized void addEmail() {
             try {
-                Thread.sleep(500);  //dormimos 0.5 segundos cada hilo que añade emails
+                Thread.sleep(500);  //dormimos 0.5 segundos cada hilo que introduce emails
                 // Si llega al maximo de emails de capacidad deja en espera el hilo
                 while (buffer.size() == MAX_ELEMENTS) {
                     try {
@@ -95,7 +92,8 @@ public class Buffer {
                 // TODO Auto-generated catch block
                 e1.printStackTrace();
             }
-
+            
+           
             // Saca un nombre de la lista
             String recipient = recipients.poll();
             // Selecciona un remitente del array si llega al ultimo reinicia el contador al final de la funcion
@@ -106,16 +104,15 @@ public class Buffer {
             // Crea un nuevo Email pasandole los datos que obtenidos
             Email e = new Email(recipient, sender);
 
-            // Lo añade al buffer
+            // Lo anadir al buffer
              buffer.offer(e);
+             // Despierta a los hilos en espera
+             notify();
+             System.out.println("El Productor: " + Thread.currentThread().getName() + " ha introducido a la cola el email: " + e.getId());
             // Reinicia el contador cuando llegue al final del array para que vuelva a empezar por el valor 0
             if (cont == senders.length) {
                 cont = 0;
-            }
-
-            // Despierta a los hilos en espera
-            notify();
-            System.out.println("El Productor: " + Thread.currentThread().getName() + " ha añadido a la cola el email: " + e.getId());
+            }       
     }
 
     // Metodo que obtiene un Email del buffer
