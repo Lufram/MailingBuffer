@@ -5,7 +5,7 @@ public class Consumer extends Thread {
     public String recipient;
     public Buffer buffer;
 
-    //metodo constructor del Consumidor, a�adimos al mismo buffer que al productor
+    //metodo constructor del Consumidor, introducimos al mismo buffer que al productor
     public Consumer(String recipient , Buffer buffer) {
         super();
         this.recipient  = recipient;
@@ -18,7 +18,7 @@ public class Consumer extends Thread {
     public Buffer getBuffer() {
         return buffer;
     }
-    public void setRecipent(String recipent) {
+    public void setRecipent(String recipient) {
         this.recipient  = recipient;
     }
     public void setBuffer(Buffer buffer) {
