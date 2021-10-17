@@ -2,12 +2,12 @@
 
 
 ## 1-REQUERIMIENTO  -  PRIME CHEKER
-
+<div style="text-align: right"> 
 Simulacion de un programa que solicita 4 numeros por pantalla y comprueba de forma simultanea si son primos y nos devuelve la información por consola.
 
 El programa pide por consola que se introduzca un número, así hasta en cuatro ocasiones. Mediante un bucle “for” que almacena en un array el número.
 Creamos cuatro hilos, uno por número introducido. Cada uno de ellos determinará si el número introducido es primo o no utilizando el método “isPrime” que almacenara el tiempo inicial y el final del proceso para calcular el tiempo que ha tardado en ejecutarlo.
-Como resultado, nos devuelve por consola el número analizado, el hilo que lo ha ejecutado, el tiempo que tarda en realizarlo y la conclusión de si el número a deliberar es primo o no.
+Como resultado, nos devuelve por consola el número analizado, el hilo que lo ha ejecutado, el tiempo que tarda en realizarlo y la conclusión de si el número a deliberar es primo o no.</div>
 
 
 ## 2-REQUERIMIENTO  -  MAILING BUFFER
