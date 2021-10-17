@@ -47,7 +47,7 @@ public class Buffer {
         this.recipients = recipients;
     }
 
-    // Metodo que añade los destinatarios desde un archivo externo
+    // Metodo que introduce los destinatarios desde un archivo externo
     public void addRecipients(String src){
         try {
             // Declara el escaner que utilizaremos para leer el archivo
@@ -73,10 +73,10 @@ public class Buffer {
         }
     }
 
-    // Metodo para añadir emails al buffer
+    // Metodo para introducir emails al buffer
     public synchronized void addEmail() {
         try {
-            Thread.sleep(500);  //dormimos 0.5 segundos cada hilo que añade emails
+            Thread.sleep(500);  //dormimos 0.5 segundos cada hilo que introduce emails
             // Si llega al maximo de emails de capacidad deja en espera el hilo
             while (buffer.size() == MAX_ELEMENTS) {
                 try {
@@ -93,6 +93,8 @@ public class Buffer {
 
         String recipient;
 
+        //mediante esta estructura de control conseguimos descartar todos los correos a pikachu@gmail.com y lo comunicamos 
+        //por consola.
         do{
             recipient = recipients.poll();
             if (recipient.equals("pikachu@gmail.com")){
@@ -118,7 +120,7 @@ public class Buffer {
 
         // Despierta a los hilos en espera
         notify();
-        System.out.println("El Productor: " + Thread.currentThread().getName() + " ha añadido a la cola el email: " + e.getId());
+        System.out.println("El Productor: " + Thread.currentThread().getName() + " ha introducido a la cola el email: " + e.getId());
     }
 
     // Metodo que obtiene un Email del buffer
