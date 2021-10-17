@@ -30,7 +30,7 @@ public class Producer extends Thread {
     public void run() {
         // Cada hilo producira 10 Emails
         for (int i = 1 ; i <= 10 ; i++) {
-            // Crea un nuevo Email mediaten el metodo adEmail de Buffer
+            // Crea un nuevo Email mediante el metodo addEmail de Buffer
             buffer.addEmail();
         }
     }
