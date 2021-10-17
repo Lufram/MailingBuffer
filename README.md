@@ -2,8 +2,7 @@
 
 
 ## 1-REQUERIMIENTO  -  PRIME CHEKER
-<div style="text-align: justify,
-  text-justify: inter-word"> 
+<div style="text-align: justify"> 
 Simulacion de un programa que solicita 4 numeros por pantalla y comprueba de forma simultanea si son primos y nos devuelve la información por consola.
 
 El programa pide por consola que se introduzca un número, así hasta en cuatro ocasiones. Mediante un bucle “for” que almacena en un array el número.
