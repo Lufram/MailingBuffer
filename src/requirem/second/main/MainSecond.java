@@ -21,20 +21,13 @@ public class MainSecond {
         buffer.setSenders(sender);
 
 
-        //Poblamos de correos destinatariosla lista
+        //Poblamos de correos destinatarios la lista, enlazando con el archivo creado emails-clients.txt
         buffer.addRecipients("src/requirem/second/links/emails-clients.txt");
 
-        /*
-        buffer.addRecipients("rechulona88@gmail.com");
-        buffer.addRecipients("picachu88@gmail.com");
-        buffer.addRecipients("qrikverga@todoloqpuedas.com");
-        buffer.addRecipients("mamasita-rica@gmail.com");
-        buffer.addRecipients("nomecuentestuvida@gmail.com");
-        */
 
-        //creamos 3 hilos productores
+        //creamos 3 hilos productores. Y le a�adimos remitentes aleatorios del Array sender.
         Producer p1 = new Producer("producer1", buffer);
-        p1.setName(p1.getProducerName());
+        p1.setName(p1.getProducerName());  
         Producer p2 = new Producer("producer2", buffer);
         p2.setName(p2.getProducerName());
         Producer p3 = new Producer("producer3", buffer);
